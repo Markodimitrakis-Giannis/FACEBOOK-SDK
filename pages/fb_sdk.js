@@ -4,7 +4,7 @@ import axios from "axios"
 
 
 
-function test_func(){
+function Test_func(){
 const myToken="EAAPTIXZCfjZA8BAE0vnJ6QC5AqRw1rXaDw6dnzHbqAc1h9ZB0z7eRtfZA7tdwaQxUdI6WHZA9TA4WqqOf5PW6luwJCvZCwFZAJ3FFFvkFrUyjvEmQsKKXwBLZAu99yRIU4Vsdd54Dmrj712JH7f6VsxkcxtqmGQmWMV4tIoWGlBxcz1OtixlokgF"
 
 const pageAccessToken="EAAPTIXZCfjZA8BAGD10hu7onz5FdsQjEZCVb5MqU7ybZAkCCpbHOQo0zghAZBV8kIIWkowA9OmJPJPZAUytq0IeqR1ZCSyXNKMp8JTK0IZCPdbjsqO2T5yQsR4XeDXJIZBwg6aZCV28wu4XeZCk0TJMmyaeWwETfXnT20KJg8g58OdEn7mxWQVSb623"
@@ -169,4 +169,4 @@ return(
 
 }
 
-export default test_func;
+export default Test_func;
