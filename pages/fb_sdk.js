@@ -1,13 +1,13 @@
 import {useEffect,useState} from "react"
 import {Image,Box,VStack,HStack,Text,Button} from "@chakra-ui/react"
 import axios from "axios"
-
+import Head from "next/head"
 
 
 function Test_func(){
-const myToken="EAAPTIXZCfjZA8BAE0vnJ6QC5AqRw1rXaDw6dnzHbqAc1h9ZB0z7eRtfZA7tdwaQxUdI6WHZA9TA4WqqOf5PW6luwJCvZCwFZAJ3FFFvkFrUyjvEmQsKKXwBLZAu99yRIU4Vsdd54Dmrj712JH7f6VsxkcxtqmGQmWMV4tIoWGlBxcz1OtixlokgF"
+const myToken="EAAPTIXZCfjZA8BAHXZBNDGZARNZCLnvXTD8bn8yiSsDdjvQLs4S3i69yERDiJ6sEEs5YcdKRZBxzV6tPZCBrxJn2BIOYZBhTZBqtlecPHl0wXxqdUZCOFaZA1ePw8ixSMzbhRR0HSU3XI9pUynWlwuICKjlZBZATTkkLBFbZCMsFzkpf2ntAZDZD"
 
-const pageAccessToken="EAAPTIXZCfjZA8BAGD10hu7onz5FdsQjEZCVb5MqU7ybZAkCCpbHOQo0zghAZBV8kIIWkowA9OmJPJPZAUytq0IeqR1ZCSyXNKMp8JTK0IZCPdbjsqO2T5yQsR4XeDXJIZBwg6aZCV28wu4XeZCk0TJMmyaeWwETfXnT20KJg8g58OdEn7mxWQVSb623"
+const pageAccessToken="EAAPTIXZCfjZA8BAFJfr9BOiEjbPvGvoZBaocWR5wbdPnTaN3c4d0oeEJEHzZCcqHuEr0xJBQQICZAWIfX3djlpqvZBZB0wVKCkXeMmqwyuth8I3ekbWDylTJowdLgyinc1fA8wGb7te6wKotijdNSDrwSGPnZAhHbLGx1zYjWbGPn8bOh0oghpTW"
 
 const userId="4326926627317297"
 
@@ -53,7 +53,7 @@ const fetchQuote= () => {axios.get('http://quotable.io/random').then(res =>{
 const createComment=()=>{
 axios.post("https://graph.facebook.com/109498587992769_128398512769443/comments?",{
         message:"Helo Friends V2",
-        access_token:"EAAPTIXZCfjZA8BAGD10hu7onz5FdsQjEZCVb5MqU7ybZAkCCpbHOQo0zghAZBV8kIIWkowA9OmJPJPZAUytq0IeqR1ZCSyXNKMp8JTK0IZCPdbjsqO2T5yQsR4XeDXJIZBwg6aZCV28wu4XeZCk0TJMmyaeWwETfXnT20KJg8g58OdEn7mxWQVSb623"
+        access_token:"EAAPTIXZCfjZA8BAFJfr9BOiEjbPvGvoZBaocWR5wbdPnTaN3c4d0oeEJEHzZCcqHuEr0xJBQQICZAWIfX3djlpqvZBZB0wVKCkXeMmqwyuth8I3ekbWDylTJowdLgyinc1fA8wGb7te6wKotijdNSDrwSGPnZAhHbLGx1zYjWbGPn8bOh0oghpTW"
     }).then(res =>{
         const result=res.data
         console.log(result);
@@ -70,7 +70,7 @@ axios.post("https://graph.facebook.com/109498587992769_128398512769443/comments?
 
 
 const fetchPagePosts=() =>{
-    axios.get("https://graph.facebook.com/v11.0/109498587992769/feed?access_token=EAAPTIXZCfjZA8BAGD10hu7onz5FdsQjEZCVb5MqU7ybZAkCCpbHOQo0zghAZBV8kIIWkowA9OmJPJPZAUytq0IeqR1ZCSyXNKMp8JTK0IZCPdbjsqO2T5yQsR4XeDXJIZBwg6aZCV28wu4XeZCk0TJMmyaeWwETfXnT20KJg8g58OdEn7mxWQVSb623"
+    axios.get("https://graph.facebook.com/v11.0/109498587992769/feed?access_token=EAAPTIXZCfjZA8BAFJfr9BOiEjbPvGvoZBaocWR5wbdPnTaN3c4d0oeEJEHzZCcqHuEr0xJBQQICZAWIfX3djlpqvZBZB0wVKCkXeMmqwyuth8I3ekbWDylTJowdLgyinc1fA8wGb7te6wKotijdNSDrwSGPnZAhHbLGx1zYjWbGPn8bOh0oghpTW"
     ).then(res =>{
         const result=res.data
        setPosts(result.data);   
@@ -97,7 +97,7 @@ const fetchPagePosts=() =>{
 
 const getPostLikes=()=>{
     const public_post_id="109498587992769_128398512769443";
-      axios.get("https://graph.facebook.com/109498587992769_128398512769443/reactions?access_token=EAAPTIXZCfjZA8BAGD10hu7onz5FdsQjEZCVb5MqU7ybZAkCCpbHOQo0zghAZBV8kIIWkowA9OmJPJPZAUytq0IeqR1ZCSyXNKMp8JTK0IZCPdbjsqO2T5yQsR4XeDXJIZBwg6aZCV28wu4XeZCk0TJMmyaeWwETfXnT20KJg8g58OdEn7mxWQVSb623&summary=total_count",{
+      axios.get("https://graph.facebook.com/109498587992769_128398512769443/reactions?access_token=EAAPTIXZCfjZA8BAFJfr9BOiEjbPvGvoZBaocWR5wbdPnTaN3c4d0oeEJEHzZCcqHuEr0xJBQQICZAWIfX3djlpqvZBZB0wVKCkXeMmqwyuth8I3ekbWDylTJowdLgyinc1fA8wGb7te6wKotijdNSDrwSGPnZAhHbLGx1zYjWbGPn8bOh0oghpTW&summary=total_count",{
         
     }).then(res =>{
         const result=res.data
@@ -113,7 +113,7 @@ const postRandomQuote=() =>{
 
     axios.post("https://graph.facebook.com/109498587992769/feed?",{
         message:quote,
-        access_token:"EAAPTIXZCfjZA8BAGD10hu7onz5FdsQjEZCVb5MqU7ybZAkCCpbHOQo0zghAZBV8kIIWkowA9OmJPJPZAUytq0IeqR1ZCSyXNKMp8JTK0IZCPdbjsqO2T5yQsR4XeDXJIZBwg6aZCV28wu4XeZCk0TJMmyaeWwETfXnT20KJg8g58OdEn7mxWQVSb623"
+        access_token:"EAAPTIXZCfjZA8BAFJfr9BOiEjbPvGvoZBaocWR5wbdPnTaN3c4d0oeEJEHzZCcqHuEr0xJBQQICZAWIfX3djlpqvZBZB0wVKCkXeMmqwyuth8I3ekbWDylTJowdLgyinc1fA8wGb7te6wKotijdNSDrwSGPnZAhHbLGx1zYjWbGPn8bOh0oghpTW"
     }).then(res =>{
         const result=res.data
         const id=res.id
@@ -130,6 +130,9 @@ const postRandomQuote=() =>{
 return(
 
 <VStack>
+<Head>
+        <meta property="og:title" content="My new title" key="title" />
+</Head>
 <Box w='90%' align="center">
   
 <Image  src="https://www.techadvisor.com/cmsdata/features/3668938/lord_of_the_rings_thumb800.jpg"  w='30%'/>
